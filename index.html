@@ -1,21 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+
   <title>Frontend Mentor | E-commerce product page</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
+
 <body>
 
   <header>
     <div class="header">
-      <div>
+      <div class="logo-nav">
+        <div class="overlay">
+        </div>
+        <div class="mobile mobile-nav">
+
+          <div class="close-icon">
+            <img src="./images/icon-close.svg" alt="close menu icon">
+          </div>
+
+          <div class="mobile-nav-links">
+            <ul>
+              <li><a href="#">Collections</a></li>
+              <li><a href="#">Men</a></li>
+              <li><a href="#">Women</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+        </div>
         <div class="mobile hamburger">
           <img src="./images/icon-menu.svg" alt="hamburger menu icon">
         </div>
@@ -24,35 +45,41 @@
         </div>
         <div class="desktop desktop-nav">
           <ul>
-            <li>Collections</li>
-            <li>Men</li>
-            <li>Women</li>
-            <li>About</li>
-            <li>Contact</li>
+            <li><a href="#">Collections</a></li>
+            <li><a href="#">Men</a></li>
+            <li><a href="#">Women</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
           </ul>
         </div>
       </div>
-      <div>
+      <div class="cart-avatar">
         <div class="cart-icon">
           <img src="./images/icon-cart.svg" alt="cart icon">
+          <div class="flex-center cart-notification ">
+
+          </div>
         </div>
         <div class="cart-dropdown">
           <div class="cart-header">Cart</div>
           <hr>
           <div class="cart-items">
-            <p>You cart is empty</p>
-            <div class="cart-item">
-              <div>
+            <p class="cart-empty">You cart is empty</p>
+            <!-- <div class="cart-item">
+              <div class="cart-item-img">
                 <img src="./images/image-product-1-thumbnail.jpg" alt="item-image">
               </div>
               <p class="item-details">
-                <span class="item-name"></span>
-                <span class="price"></span>  <span class="quantity">3</span> <span class="total"></span> 
+                <span class="item-name">Fall Limited Edition Sneakers </span>
+                $<span class="price">125.00 x</span> <span class="quantity">3</span> <span class="total">$375.00</span>
               </p>
               <div>
                 <img src="./images/icon-delete.svg" alt="delete icon">
               </div>
             </div>
+            <a class="checkout-button">
+              Checkout
+            </a> -->
           </div>
         </div>
         <div class="avatar">
@@ -62,24 +89,77 @@
     </div>
 
   </header>
-  
-  Sneaker Company
 
-  
+  <main>
+    <div class="container">
+      <div class="imgs-container">
+        <div>
+          <img class="product-img" src="./images/image-product-1.jpg" alt="product image 1">
+        </div>
+        <div class="desktop thumbs">
+          <div>
+            <img class="active" src="./images/image-product-1-thumbnail.jpg" alt="product thumbnail img" data-id="0">
+          </div>
+          <div>
+            <img src="./images/image-product-2-thumbnail.jpg" alt="product thumbnail img" data-id="1">
+          </div>
+          <div>
+            <img src="./images/image-product-3-thumbnail.jpg" alt="product thumbnail img" data-id="2">
+          </div>
+          <div>
+            <img src="./images/image-product-4-thumbnail.jpg" alt="product thumbnail img" data-id="3">
+          </div>
+        </div>
+        <div class="mobile mobile-arrows">
+          <div class="flex-center previous-arrow">
+            <img src="./images/icon-previous.svg" alt="previous arrow icon">
+          </div>
+          <div class="flex-center next-arrow">
+            <img src="./images/icon-next.svg" alt="next arrow icon">
+          </div>
+        </div>
+      </div>
 
-  These low-profile sneakers are your perfect casual wear companion. Featuring a 
-  durable rubber outer sole, they’ll withstand everything the weather can offer.
+      <div class="info-container">
+        <h3>Sneaker Company</h3>
+        <h1>Fall Limited Edition Sneakers</h1>
+        <p class="info-text">These low-profile sneakers are your perfect casual wear companion. Featuring a
+          durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+        <div class="pricing">
+          <div>
+            <b>$125.00</b>
+            <span>50%</span>
+          </div>
+          <div class="old-price">
+            $250.00
+          </div>
+        </div>
+        <div class="carting">
+          <div class="quantity-picker">
+            <div class="minus-icon">
+              <img src="./images/icon-minus.svg" alt="minus icon">
+            </div>
+            <span>0</span>
+            <div class="plus-icon">
+              <img src="./images/icon-plus.svg" alt="plus icon">
+            </div>
+          </div>
+          <a class="add-button">
+            <div>
+              <img src="./images/icon-cart.svg" alt="cart-icon">
+            </div>
+            Add to cart
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
 
-  
-  50%
-  $250.00
 
-  0
-  Add to cart
-  
   <footer class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="https://github.com/younessoub">Youness Oubelkacem</a>.
   </footer>
 </body>
+
 </html>
