@@ -89,9 +89,9 @@ img {
 .overlay {
     display: none;
     position: absolute;
-    z-index: 9;
+    z-index: 8;
     background: black;
-    opacity: .6;
+    opacity: .8;
     top: 0;
     right: 0;
     left: 0;
@@ -134,7 +134,7 @@ img {
 .cart-dropdown {
     display: none;
     position: absolute;
-    z-index: 8;
+    z-index: 7;
     top: 70px;
     left: 50%;
     transform: translateX(-50%);
@@ -235,7 +235,8 @@ img {
     position: relative;
 }
 
-.mobile-arrows {
+.mobile-arrows,
+.desktop-arrows {
     position: absolute;
     display: flex;
     width: 90%;
@@ -246,11 +247,21 @@ img {
     transform: translate(-50%, -50%);
 }
 
-.mobile-arrows>div {
+.mobile-arrows>div,
+.desktop-arrows>div {
     background-color: var(--white);
     height: 40px;
     width: 40px;
     border-radius: 50%;
+    cursor: pointer;
+}
+
+.remove-lightbox img {
+    float: right;
+    width: 20px;
+    height: 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
 }
 
 .info-container {
@@ -416,6 +427,21 @@ h1 {
 
     .thumbs img.active {
         opacity: .5;
+    }
+
+    .lightbox {
+        display: none;
+        position: absolute;
+        height: 600px;
+        width: 500px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 9;
+    }
+
+    .show-lightbox {
+        cursor: pointer;
     }
 
     h1 {

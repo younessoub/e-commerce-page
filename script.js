@@ -4,9 +4,9 @@ const mobileNav = document.querySelector('.mobile-nav')
 const overlay = document.querySelector('.overlay')
 const cartIcon = document.querySelector('.cart-icon')
 const cartDropdown = document.querySelector('.cart-dropdown')
-const previousArrow = document.querySelector('.previous-arrow')
-const nextArrow = document.querySelector('.next-arrow')
-const currentProductImg = document.querySelector('.product-img')
+const previousArrow = document.querySelectorAll('.previous-arrow')
+const nextArrow = document.querySelectorAll('.next-arrow')
+const currentProductImg = document.querySelectorAll('.product-img')
 const minusIcon = document.querySelector('.minus-icon')
 const quantityElm = document.querySelector('.quantity-picker span')
 const plusIcon = document.querySelector('.plus-icon')
@@ -15,7 +15,9 @@ const cartItems = document.querySelector('.cart-items')
 const cartEmpty = document.querySelector('.cart-empty')
 const cartNotification = document.querySelector('.cart-notification')
 const thumbs = document.querySelectorAll('.thumbs img')
-
+const showLightbox = document.querySelector('.show-lightbox')
+const lightbox = document.querySelector('.lightbox')
+const hideLightbox = document.querySelector('.remove-lightbox')
 
 hamburger.addEventListener('click', () => {
     mobileNav.style.display = 'flex'
@@ -43,29 +45,37 @@ const imgsSrcs = [
     './images/image-product-4.jpg'
 ]
 
-nextArrow.addEventListener('click', () => {
-    if (currentIndex + 1 > imgsSrcs.length - 1) {
-        currentIndex = 0
-    } else {
-        currentIndex++;
-    }
+nextArrow.forEach(arrow => {
+    arrow.addEventListener('click', () => {
+        if (currentIndex + 1 > imgsSrcs.length - 1) {
+            currentIndex = 0
+        } else {
+            currentIndex++;
+        }
 
-    changeProductImg(currentIndex)
+        changeProductImg(currentIndex)
+    })
 })
 
-previousArrow.addEventListener('click', () => {
-    if (currentIndex - 1 < 0) {
-        currentIndex = imgsSrcs.length - 1;
-    } else {
-        currentIndex--;
-    }
+previousArrow.forEach(arrow => {
+    arrow.addEventListener('click', () => {
+        if (currentIndex - 1 < 0) {
+            currentIndex = imgsSrcs.length - 1;
+        } else {
+            currentIndex--;
+        }
 
-    changeProductImg(currentIndex)
+        changeProductImg(currentIndex)
+    })
 })
+
+
 
 
 function changeProductImg(index) {
-    currentProductImg.src = imgsSrcs[index];
+    currentProductImg.forEach(img => {
+        img.src = imgsSrcs[index];
+    })
 }
 
 
@@ -146,4 +156,21 @@ thumbs.forEach(thumb => {
         })
         // console.log(thumb.getAttribute('data-id'))
     })
+})
+
+
+// handling lightbox
+
+showLightbox.addEventListener('click', () => {
+    // console.log(window.matchMedia("(min-width: 980px)").matches)
+    if (window.matchMedia("(min-width: 980px)").matches) {
+        overlay.style.display = 'block'
+        lightbox.style.display = 'block'
+    }
+})
+
+
+hideLightbox.addEventListener('click', () => {
+    overlay.style.display = 'none'
+    lightbox.style.display = 'none'
 })
